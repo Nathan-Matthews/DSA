@@ -21,21 +21,20 @@ function fibs(len){
     return myFibonacci;
 }
 
-let myFibonacci = [];
 function fibsRec(len){
     if(len == 0){
-        myFibonacci.push(0);
         return 0;
     }
     if(len == 1){
-        myFibonacci.push(1);
         return 1;
     }
-    if(len > 1){
-        myFibonacci.push(fibsRec(len - 1) + fibsRec(len - 2));
-        return
-    }
+    return fibsRec(len - 1) + fibsRec(len - 2);
 }
 
-fibsRec(2);
-console.log(myFibonacci);
+function mergeSort(arr){
+    
+}
+
+let myFibonacci = [];
+fibsRec(6);
+console.log(fibsRec(6));
