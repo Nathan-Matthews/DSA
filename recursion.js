@@ -1,5 +1,5 @@
-function fibs(len){
-    let myFibonacci = [];
+let myFibonacci = []; // Empty array for storing results of 'fibonacci'
+const fibonacci = function(len){
     let count = 0;
     if(len == 0){
         return myFibonacci;
@@ -21,20 +21,45 @@ function fibs(len){
     return myFibonacci;
 }
 
-function fibsRec(len){
-    if(len == 0){
-        return 0;
+const recursiveFibonacci = function(len){
+    if(len < 2){
+        return len;
     }
-    if(len == 1){
-        return 1;
-    }
-    return fibsRec(len - 1) + fibsRec(len - 2);
+    return recursiveFibonacci(len - 1) + recursiveFibonacci(len - 2);
 }
 
-function mergeSort(arr){
-    
+const mergeSort = function(arr){
+
 }
 
-let myFibonacci = [];
-fibsRec(6);
-console.log(fibsRec(6));
+// Takes two sorted arrays and merges them
+const merge = function(leftArr, rightArr){
+    let L = 0;
+    let R = 0;
+    let count = 0;
+    let newArray = [];
+    while(L < leftArr.length  && R < rightArr.length){
+        if(leftArr[L] < rightArr[R]){
+            newArray[count++] = leftArr[L++];
+        }
+        newArray[count++] = rightArr[R++];
+    }
+    while(L < leftArr.length){
+        newArray[count++] = leftArr[L++]
+    }
+    while(R < rightArr.length){
+        newArray[count++] = rightArr[R++]
+    }
+    return newArray;
+
+}
+
+
+fibonacci(8);
+console.log(myFibonacci); // Returns [0, 1, 1, 2, 3, 5]
+console.log(recursiveFibonacci(8)); // Returns 8
+
+let leftArray = [0,2,6,8,9,14,45,56,900];
+let rightArray = [1,3,5,7,9,11,13];
+console.log(merge(leftArray,rightArray)); //
+
